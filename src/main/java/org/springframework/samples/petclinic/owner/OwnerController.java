@@ -159,7 +159,7 @@ class OwnerController {
 		mav.addObject(owner);
 		logIt("ownerId = " + ownerId);
 		logIt("owner = " + owner);
-		logIt("change for v4");
+		logIt("change for v5");
 		return mav;
 	}
 
