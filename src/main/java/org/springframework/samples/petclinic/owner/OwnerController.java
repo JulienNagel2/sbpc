@@ -157,9 +157,16 @@ class OwnerController {
 		ModelAndView mav = new ModelAndView("owners/ownerDetails");
 		Owner owner = this.owners.findById(ownerId);
 		mav.addObject(owner);
-		System.out.println("***** Hello ownerId = " + ownerId);
-		System.out.println("***** Hello owner = " + owner);
+		logIt("ownerId = " + ownerId);
+		logIt("owner = " + owner);
 		return mav;
+	}
+
+	private static void logIt(String msg) {
+		java.util.Date d = new java.util.Date();
+		java.text.SimpleDateFormat formatter = new java.text.SimpleDateFormat("yyyy/MM/dd HH:mm:ss:SSS");
+		String dateString = formatter.format(d);
+		System.out.println("[" + dateString + "]" + "[OwnerController] " + msg);
 	}
 
 }
